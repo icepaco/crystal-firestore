@@ -1,6 +1,6 @@
 # Build image
 FROM crystallang/crystal:latest-alpine as builder
-RUN MAKEDIR -p /opt/app
+RUN mkdir -p /opt/app
 WORKDIR /opt
 # Cache dependencies
 COPY ./shard.yml ./shard.lock /opt/
