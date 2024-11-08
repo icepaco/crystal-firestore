@@ -9,6 +9,8 @@ dependencies:
   jwt:
     github: crystal-community/jwt
     version: ~> 1.4
+  grpc:
+    github: jgaskins/grpc
 
 development_dependencies:
   webmock:
