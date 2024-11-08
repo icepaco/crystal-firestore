@@ -8,7 +8,7 @@ steps:
       - '-c'
       - |
         set -ex
-        mkdir /opt
+        mkdir -p /opt
         cd /opt
         cp /workspace/shard.yml /workspace/shard.lock .
         shards install -v
