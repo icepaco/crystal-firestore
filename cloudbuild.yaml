@@ -13,7 +13,7 @@ steps:
         cp /workspace/shard.yml /workspace/shard.lock .
         shards install -v
         cp -r /workspace/* .
-        crystal build --static --release ./src/firestore/stub.cr
+        crystal spec
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t',
