@@ -1,13 +1,19 @@
 steps:
   # Run tests and save to file
-  - name: crystallang/crystal:latest-alpine
-    WORKDIR /opt
-    # Cache dependencies
-    COPY ./shard.yml ./shard.lock /opt/
-    RUN shards install -v
-    # Build a binary
-    COPY . /opt/
-    RUN crystal build --static --release ./src/firestore/stub.cr
+   # Build stage (similar to your "builder" stage in Dockerfile)
+  - name: 'crystallang/crystal:1.7.2-alpine'
+    id: 'builder'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        set -ex
+        mkdir /opt
+        cd /opt
+        cp /workspace/shard.yml /workspace/shard.lock .
+        shards install -v
+        cp -r /workspace/* .
+        crystal build --static --release ./src/firestore/stub.cr
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t',
