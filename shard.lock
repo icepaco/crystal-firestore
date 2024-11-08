@@ -1,34 +1,10 @@
 version: 2.0
 shards:
-  ameba:
-    git: https://github.com/veelenga/ameba.git
-    version: 0.14.3
-
-  bindata:
-    git: https://github.com/spider-gazelle/bindata.git
-    version: 1.8.2
-
-  connect-proxy:
-    git: https://github.com/spider-gazelle/connect-proxy.git
-    version: 1.4.1
-
   grpc:
     git: https://github.com/jgaskins/grpc.git
     version: 0.1.6
 
-  jwt:
-    git: https://github.com/crystal-community/jwt.git
-    version: 1.6.0
-
-  openssl_ext:
-    git: https://github.com/spider-gazelle/openssl_ext.git
-    version: 2.1.5
-
   protobuf:
     git: https://github.com/jeromegn/protobuf.cr.git
     version: 2.3.0+git.commit.d4de0f273790f96e8c6dc5437d202422a88e2743
-
-  webmock:
-    git: https://github.com/manastech/webmock.cr.git
-    version: 0.14.0
 
